@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: interview_dev
+
+test:
+  <<: *default
+  database: interview_test
+
+production:
+  <<: *default
+  database: interview_production
