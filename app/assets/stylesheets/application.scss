@@ -1,0 +1,149 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,100italic,300italic,400italic,700,700italic,900,900italic);
+
+body{
+  background: #FCFCFC;
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+}
+
+.white-bg{
+  background: #fff;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.navbar{
+  border-radius: 0;
+  margin-bottom: 0;
+  padding: 10px 0;
+
+  .profile{
+    a{
+      padding: 0 !important;
+
+      &:hover{
+        background: transparent !important;
+      }
+    }
+
+    .info{
+      display: inline-block;
+      text-align: right;
+      color: #bdbdbd;
+
+      strong{
+        display: block;
+        color: #424242
+      }
+    }
+
+    .avatar{
+      display: inline-block;
+
+      img{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-top: -16px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.header{
+  text-align: center;
+  background: #29B363;
+  padding: 40px 0;
+  color: #fff;
+
+  h2{
+    font-weight: bold;
+  }
+}
+
+#content{
+  color: #9e9e9e;
+  padding: 40px 0;
+  font-size: 16px;
+  line-height: 1.5;
+
+  .joke-content, .no-joke{
+    padding: 0 15%;
+    margin-bottom: 30px;
+  }
+
+  .no-joke{
+    text-align: center;
+  }
+
+  .votes{
+    padding: 30px 0;
+    margin: 0 25%;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+  }
+}
+
+.btn-app{
+  min-width: 180px;
+  color: #fff !important;
+  border-radius: 0;
+  margin: 0 10px;
+  transition: all ease .3s;
+}
+
+.btn-blue{
+  background: #2C7EDB;
+
+  &:hover{
+    background: #01579b;
+  }
+}
+
+.btn-green{
+  background: #29B363;
+
+  &:hover{
+    background: #1b5e20; 
+  }
+}
+
+.footer{
+  padding: 20px 7.5%;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+
+  .about{
+    color: #bdbdbd;
+  }
+
+  .copyright{
+    padding-top: 15px;
+    color: #9e9e9e;
+
+    a{
+      color: #424242;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+-if @joke
+  .joke-content
+    = @joke.content
+  .votes
+    = link_to 'This is Funny!', like_path(@joke), class: 'btn btn-app btn-blue', id: 'like'
+    = link_to 'This is not Funny.', dislike_path(@joke), class: 'btn btn-app btn-green', id: 'dislike'
+
+  :javascript
+    $(document).on('click', '#like, #dislike', function(e){
+      e.preventDefault();
+
+      $.ajax({
+        type: 'POST',
+        url: $(this).attr('href'),
+        data:{
+          joke_id: parseInt("#{@joke.id}")
+        },
+        success: function (data) {
+          if(data.joke){
+            $('.joke-content').text(data.joke.content);
+            $('#like').attr('href', '/jokes/' + data.joke.id + '/like');
+            $('#dislike').attr('href', '/jokes/' + data.joke.id + '/dislike');
+          }
+          else{
+            $('.joke-content').html("<p class='align-center'>That's all the jokes for today! Come back another day!</p>");
+            $('.votes').remove();
+          }
+        },
+        error: function (err) {
+          console.log('Error when like joke: ' + err);
+        }
+      });
+    });
+
+- else
+  .joke-content
+    %p.align-center That's all the jokes for today! Come back another day!
+    

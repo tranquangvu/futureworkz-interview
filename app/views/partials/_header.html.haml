@@ -1,0 +1,23 @@
+%nav.navbar.white-bg
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"} Jokes
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.profile
+          %a{:href => "#"}
+            .info
+              Handcrafted by
+              %strong
+                Joan Futureworkz
+            .avatar
+              = image_tag('user.jpg')
+%header.header
+  %h2 A joke a day keeps the doctor away
+  %p If you joke wrong away, your teeth have to pa. (Serious)
+  
